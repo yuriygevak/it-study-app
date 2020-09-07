@@ -25,3 +25,13 @@
 #container a {
   text-decoration: none;
 }
+
+.toolbar-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.header-search-icon {
+  padding: 0 20px 0 0;
+}
