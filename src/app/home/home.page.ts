@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  showSearch = false;
 
   constructor() {}
+
+  toggleSearch($event: boolean): void {
+    this.showSearch = $event;
+  }
 
 }

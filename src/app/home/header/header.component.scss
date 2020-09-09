@@ -1,0 +1,14 @@
+.toolbar-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-search-icon {
+  padding: 0 20px 0 0;
+  text-align: right;
+}
