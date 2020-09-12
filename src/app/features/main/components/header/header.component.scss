@@ -1,14 +1,17 @@
+.header {
+  height: 56px;
+}
+
 .toolbar-wrapper {
   display: flex;
   align-items: center;
+  padding: 0 20px;
 }
 
-.ripple-parent {
-  position: relative;
-  overflow: hidden;
+.app-title {
+  text-align: center;
 }
 
 .header-search-icon {
-  padding: 0 20px 0 0;
   text-align: right;
 }

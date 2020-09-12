@@ -1,0 +1,11 @@
+<app-header (searchClickEvent)="toggleSearch($event)"></app-header>
+
+<ion-content>
+    <ion-searchbar animated [ngClass]="{'ion-hide': !showSearch}"></ion-searchbar>
+
+    <main class="main">
+        <ion-router-outlet></ion-router-outlet>
+    </main>
+
+    <app-tab-navigation></app-tab-navigation>
+</ion-content>

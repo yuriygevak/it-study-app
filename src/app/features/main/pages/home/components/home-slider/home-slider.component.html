@@ -1,0 +1,12 @@
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+
+    <ion-slide *ngFor="let item of sliderItems">
+        <ion-card class="slide-card"
+                  [routerLink]="['', item.id]">
+        <h3 class="slide-title">{{ item.title }}</h3>
+      </ion-card>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

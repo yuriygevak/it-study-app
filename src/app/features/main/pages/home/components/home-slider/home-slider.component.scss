@@ -1,0 +1,16 @@
+ion-slides {
+  height: 30vh;
+}
+
+.slide-card {
+  width: 100%;
+  height: calc(100% - 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .slide-title {
+    margin: 0;
+    font-size: 32px;
+  }
+}

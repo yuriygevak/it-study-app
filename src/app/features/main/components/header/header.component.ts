@@ -4,6 +4,7 @@ import {
   OnInit,
   Output
 } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -15,13 +16,17 @@ export class HeaderComponent implements OnInit {
 
   @Output() searchClickEvent = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private menu: MenuController) { }
 
   ngOnInit(): void {}
 
   toggleSearch(): any {
     this.isSearchActive = !this.isSearchActive;
     this.searchClickEvent.emit(this.isSearchActive);
+  }
+
+  openMenu() {
+    this.menu.open('start');
   }
 
 }
