@@ -1,0 +1,14 @@
+<h3 class="page-title">{{ topic.title }}</h3>
+
+<ion-content>
+  <ion-card *ngFor="let section of pageSections">
+    <ion-card-header>
+      <ion-card-title>{{ section }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+    <ion-progress-bar></ion-progress-bar>
+  </ion-card>
+</ion-content>

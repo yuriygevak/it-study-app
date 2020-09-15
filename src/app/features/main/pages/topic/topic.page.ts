@@ -1,35 +1,37 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { Course } from '../../models';
 import { CoursesService } from '../../services';
 
 @Component({
-  selector: 'app-course',
-  templateUrl: './course.page.html',
-  styleUrls: ['./course.page.scss'],
+  selector: 'app-topic',
+  templateUrl: './topic.page.html',
+  styleUrls: ['./topic.page.scss'],
 })
-export class CoursePage implements OnInit {
-  course: Course = null;
+export class TopicPage implements OnInit {
+  topic: {id: string; title: string; } = null;
+  pageSections: string[] = [
+    'theory',
+    'examples',
+    'practice'
+  ];
 
   constructor(private activatedRoute: ActivatedRoute,
               private coursesServices: CoursesService) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(paramMap => {
-      if (!paramMap.has('courseId')) {
+      if (!paramMap.has('topicId')) {
         // redirect
         return;
       }
 
       const courseId: string = paramMap.get('courseId');
-      this.course = this.coursesServices.getCourseById(courseId);
+      const topicId: string = paramMap.get('topicId');
+      this.topic = this.coursesServices.getCourseById(courseId).topicList
+          .find(item => item.id === topicId);
 
     });
-  }
-
-  selectTheme(theme: string): void {
-    console.log('theme', theme);
   }
 
 }

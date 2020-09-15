@@ -15,11 +15,15 @@ const routes: Routes = [
         children: [
             {
                 path: 'home',
-                loadChildren: './pages/home/home.module#HomePageModule',
+                loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule),
             },
             {
                 path: ':courseId',
-                loadChildren: './pages/course/course.module#CoursePageModule',
+                loadChildren: () => import('./pages/course/course.module').then(m => m.CoursePageModule),
+            },
+            {
+                path: ':courseId/:topicId',
+                loadChildren: () => import('./pages/topic/topic.module').then( m => m.TopicPageModule)
             }
         ]
     },
@@ -27,7 +31,7 @@ const routes: Routes = [
         path: '**',
         redirectTo: 'home',
         pathMatch: 'full'
-    }
+    },
 ];
 
 @NgModule({
