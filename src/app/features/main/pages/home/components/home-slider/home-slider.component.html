@@ -3,7 +3,8 @@
 
     <ion-slide *ngFor="let item of sliderItems">
         <ion-card class="slide-card"
-                  [routerLink]="['', item.id]">
+                  [routerLink]="['/course']"
+                  [queryParams]="{courseId: item.id}">
         <h3 class="slide-title">{{ item.title }}</h3>
       </ion-card>
     </ion-slide>

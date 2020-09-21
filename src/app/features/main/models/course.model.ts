@@ -1,6 +1,7 @@
+import { Lesson } from './lesson.model';
+
 export interface Course {
     id: string;
-    ref: string;
     title: string;
-    topicList: {id: string; title: string; }[];
+    lessons: Lesson[];
 }

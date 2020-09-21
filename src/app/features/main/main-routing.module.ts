@@ -18,12 +18,12 @@ const routes: Routes = [
                 loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule),
             },
             {
-                path: ':courseId',
+                path: 'course',
                 loadChildren: () => import('./pages/course/course.module').then(m => m.CoursePageModule),
             },
             {
-                path: ':courseId/:topicId',
-                loadChildren: () => import('./pages/topic/topic.module').then( m => m.TopicPageModule)
+                path: 'lesson',
+                loadChildren: () => import('./pages/lesson/lesson.module').then(m => m.LessonPageModule)
             }
         ]
     },
